@@ -107,7 +107,7 @@ export default function VoicePlayer({
           onClick={() => {
             //Download audio file
             const a = document.createElement("a");
-            a.href = audioSrc;
+            a.href = "/parla.mp3";
             a.download = "oretmenler_gununuz_kutlu_olsun_amirim_o7.mp3";
             a.click();
           }}
