@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function VoicePlayer({
-  audioSrc = "/parla.mp3",
-  imageSrc = "/base.jpeg",
+  audioSrc = "https://cdnqrmenu.s3.eu-west-1.amazonaws.com/grkn/amirim/Parla.mp3",
+  imageSrc = "https://cdnqrmenu.s3.eu-west-1.amazonaws.com/grkn/amirim/2.jpeg",
 }: {
   audioSrc?: string;
   imageSrc?: string;
