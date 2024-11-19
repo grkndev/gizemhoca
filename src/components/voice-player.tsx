@@ -66,7 +66,7 @@ export default function VoicePlayer({
   };
 
   return (
-    <div className="flex flex-col items-center p-4 rounded-lg shadow-md xl:w-80 aspect-square  bg-gradient-to-br from-pink-300 to-pink-700">
+    <div className="flex flex-col items-center mx-8 p-4 w-full rounded-lg shadow-md xl:w-80 aspect-square  bg-gradient-to-br from-pink-300 to-pink-700">
       <Image
         src={imageSrc}
         alt="Audio thumbnail"
@@ -75,7 +75,7 @@ export default function VoicePlayer({
         className="rounded-md mb-4"
       />
       <div className="w-full space-y-2 mb-4 items-center flex flex-col">
-        <span className="font-sans">Parla Amirim</span>
+        <span className="font-sans text-base font-semibold">Parla Amirim</span>
         <Slider
           value={[currentTime]}
           max={duration}
@@ -85,8 +85,8 @@ export default function VoicePlayer({
           className="w-full"
         />
         <div className="flex justify-between w-full text-xs text-muted-foreground">
-          <span className="font-sans">{formatTime(currentTime)}</span>
-          <span className="font-sans">{formatTime(duration)}</span>
+          <span className="font-sans text-white">{formatTime(currentTime)}</span>
+          <span className="font-sans text-white">{formatTime(duration)}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2 w-full">
