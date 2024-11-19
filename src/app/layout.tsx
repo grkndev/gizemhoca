@@ -6,8 +6,22 @@ const inter = Inter({ subsets: ["latin"] });
 const dancing_script = Dancing_Script({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gizem Hocammmm",
+  title: "Gizem Hocammmm | Amirim o7",
   description: "Tarihin en iyisi",
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: "https://amirim.grkn.dev",
+    siteName: "Gizem Hocam",
+    images: [
+      {
+        url: "https://amirim.grkn.dev/base.jpeg",
+        width: 800,
+        height: 800,
+        alt: "Gizem Hocam",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body className={`${inter.className} ${dancing_script.className}`}>{children}</body>
     </html>
   );
