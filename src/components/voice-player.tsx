@@ -66,55 +66,64 @@ export default function VoicePlayer({
   };
 
   return (
-    <div className="flex flex-col items-center mx-8 p-4 w-full rounded-lg shadow-md xl:w-80 aspect-square  bg-gradient-to-br from-pink-300 to-pink-700">
-      <Image
-        src={imageSrc}
-        alt="Audio thumbnail"
-        width={200}
-        height={200}
-        className="rounded-md mb-4"
-      />
-      <div className="w-full space-y-2 mb-4 items-center flex flex-col">
-        <span className="font-sans text-base font-semibold">Parla Amirim</span>
-        <Slider
-          value={[currentTime]}
-          max={duration}
-          step={0.1}
-          onValueChange={handleTimeChange}
-          aria-label="Ses ilerleme çubuğu"
-          className="w-full"
+    <div className="flex flex-col items-center mx-8 p-4 w-full rounded-lg shadow-md   bg-gradient-to-br from-pink-800 to-violet-950">
+      <div className="flex md:flex-row flex-col items-center w-full gap-4">
+        <Image
+          src={imageSrc}
+          alt="Audio thumbnail"
+          width={200}
+          height={200}
+          className="rounded-md "
         />
-        <div className="flex justify-between w-full text-xs text-muted-foreground">
-          <span className="font-sans text-white">{formatTime(currentTime)}</span>
-          <span className="font-sans text-white">{formatTime(duration)}</span>
+        <div className="flex flex-col w-full gap-4 items-center sm:items-start">
+          <span className="font-sans text-xl font-semibold">Parla Amirim</span>
+
+          <div className="w-full space-y-2  items-center flex flex-col ">
+            <Slider
+              value={[currentTime]}
+              max={duration}
+              step={0.1}
+              onValueChange={handleTimeChange}
+              aria-label="Ses ilerleme çubuğu"
+              className="w-full"
+            />
+            <div className="flex justify-between w-full text-xs text-muted-foreground">
+              <span className="font-sans text-white">
+                {formatTime(currentTime)}
+              </span>
+              <span className="font-sans text-white">
+                {formatTime(duration)}
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-row gap-2 w-full">
+            <Button
+              onClick={togglePlayPause}
+              variant="outline"
+              size="icon"
+              className="w-full text-black font-sans"
+              aria-label={isPlaying ? "Duraklat" : "Oynat"}
+            >
+              {isPlaying ? (
+                <Pause className="h-4 w-4" />
+              ) : (
+                <Play className="h-4 w-4" />
+              )}
+            </Button>
+            <Button
+              onClick={() => {
+                //Download audio file
+                const a = document.createElement("a");
+                a.href = "/parla.mp3";
+                a.download = "oretmenler_gununuz_kutlu_olsun_amirim_o7.mp3";
+                a.click();
+              }}
+              className="w-full "
+            >
+              <Download />
+            </Button>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-2 w-full">
-        <Button
-          onClick={togglePlayPause}
-          variant="outline"
-          size="icon"
-          className="w-full text-black font-sans"
-          aria-label={isPlaying ? "Duraklat" : "Oynat"}
-        >
-          {isPlaying ? (
-            <Pause className="h-4 w-4" />
-          ) : (
-            <Play className="h-4 w-4" />
-          )}
-        </Button>
-        <Button
-          onClick={() => {
-            //Download audio file
-            const a = document.createElement("a");
-            a.href = "/parla.mp3";
-            a.download = "oretmenler_gununuz_kutlu_olsun_amirim_o7.mp3";
-            a.click();
-          }}
-          className="w-full"
-        >
-          <Download />
-        </Button>
       </div>
     </div>
   );
