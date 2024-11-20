@@ -1,7 +1,6 @@
 "use client";
 import { ConfettiSideCannons } from "@/components/Confetti";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import { Card } from "@/components/ui/card";
 import SparklesText from "@/components/ui/sparkles-text";
 import TypingAnimation from "@/components/ui/typing-animation";
 import VoicePlayer from "@/components/voice-player";

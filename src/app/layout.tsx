@@ -8,6 +8,7 @@ const dancing_script = Dancing_Script({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Gizem Hocammmm | Amirim o7",
   description: "Tarihin en iyisi",
+  themeColor: "#D397A2",
   openGraph: {
     type: "website",
     locale: "tr_TR",

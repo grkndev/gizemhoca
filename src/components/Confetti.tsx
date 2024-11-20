@@ -1,6 +1,8 @@
 "use client";
 import confetti from "canvas-confetti";
-
+// import Lottie from "react-lottie";
+import { useLottie } from "lottie-react";
+import GiftBoxAnimation from "@/components/giftbox.json";
 import { Button } from "@/components/ui/button";
 import { setTimeout } from "timers/promises";
 
@@ -9,6 +11,16 @@ export function ConfettiSideCannons({
 }: {
   click: (hasClicked: boolean) => void;
 }) {
+  const options = {
+    loop: true,
+    autoplay: true,
+    animationData: GiftBoxAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const { View } = useLottie(options);
+
   const handleClick = () => {
     const end = Date.now() + 3 * 1000; // 3 seconds
     const colors = ["#c4de04", "#7d00f2", "#c4de04", "#f8deb1"];
@@ -41,14 +53,9 @@ export function ConfettiSideCannons({
   };
 
   return (
-    <div className="relative">
-      <Button
-        
-        className="font-sans w-96 h-96"
-        onClick={handleClick}
-      >
-        HEDİYEYİ AÇMAK İÇİN BURAYA BASIN
-      </Button>
+    <div className="cursor-pointer font-sans w-96 h-96 items-center justify-center flex flex-col" onClick={handleClick}>
+      <Button >HEDİYEYİ AÇMAK İÇİN BURAYA BASIN</Button>
+      <div className="absolute w-[400px] h-[400px] -z-10">{View}</div>
     </div>
   );
 }
