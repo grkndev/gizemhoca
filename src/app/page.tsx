@@ -8,6 +8,7 @@ import VoicePlayer from "@/components/voice-player";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
           Tarihin en iyi öğretmeni :)"
         />
       </div>
-      <div className="mt-64  flex flex-col w-full ">
+      <div className="mt-32  flex flex-col w-full ">
         <AnimatedGradientText>
           🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
           <span
@@ -63,6 +64,19 @@ export default function Home() {
             alt="Cloud2"
           />
         </div>
+      </div>
+      <div className="mt-16 flex flex-col gap-2 items-center justify-center">
+        <span className="font-[inter] ">
+          Bu web sitesi özel web sunucularında barındırılmaktadır böylelikle sonsuza
+          kadar aktif kalacaktır. Özlediğinizde, kötü hissettiğinizde, moral
+          gerektiğinde her zaman ulaşabilirsiniz.
+        </span>
+        <span className="font-[inter] flex flex-row gap-1 text-white/50">
+          <Link href={"https://grkn.dev?ref=amirim.grkn.dev"} target="_blank">
+            GrknDev
+          </Link>
+          © 2024. All Rights Reserved
+        </span>
       </div>
     </main>
   );
