@@ -43,7 +43,7 @@ export default function Home() {
         <div className=" flex flex-col xl:flex-row w-full items-center justify-between bottom-0 ">
           <Image
             src="/cloud.png"
-            className="w-[40rem]"
+            className="w-[30rem] opacity-50"
             width={3000}
             height={2000}
             alt="Cloud"
@@ -57,7 +57,7 @@ export default function Home() {
 
           <Image
             src="/cloud.png"
-            className="w-[40rem]"
+            className="w-[30rem] opacity-50"
             width={3000}
             height={2000}
             alt="Cloud2"

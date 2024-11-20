@@ -18,7 +18,8 @@
 
 body {
   color: #fff;
-  background: #D397A2;
+  /* background: #D397A2; */
+  background: url('/BG_TEST.png') no-repeat center center fixed;
 }
 
 @layer base {

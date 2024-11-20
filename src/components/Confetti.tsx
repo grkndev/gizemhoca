@@ -54,7 +54,7 @@ export function ConfettiSideCannons({
 
   return (
     <div className="cursor-pointer font-sans w-96 h-96 items-center justify-center flex flex-col" onClick={handleClick}>
-      <Button >HEDİYEYİ AÇMAK İÇİN BURAYA BASIN</Button>
+      <Button className="bg-gradient-to-br from-pink-800 to-violet-950">HEDİYEYİ AÇMAK İÇİN BURAYA BASIN</Button>
       <div className="absolute w-[400px] h-[400px] -z-10">{View}</div>
     </div>
   );
