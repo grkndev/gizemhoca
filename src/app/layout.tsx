@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Dancing_Script, Inter } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] });
 const dancing_script = Dancing_Script({ subsets: ["latin"] });
 
@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={`${inter.className} ${dancing_script.className}`}>{children}</body>
+      <Analytics/>
     </html>
   );
 }
